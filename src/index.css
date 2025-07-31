@@ -1,13 +1,123 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+:root {
+  --bg-color: #121212;
+  --text-color: #eee;
+  --textarea-bg: #1e1e1e;
+  --textarea-border: #444;
+  --button-bg: #9932cc;
+  --button-bg-hover: #7904bd;
+  --button-text: white;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+[data-theme="light"] {
+  --bg-color: #f9f9f9;
+  --text-color: #222;
+  --textarea-bg: #fff;
+  --textarea-border: #ccc;
+
+  --button-bg: #6a1b9a;
+  --button-bg-hover: #4a148c;
+  --button-text: white;
+}
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.App {
+  min-height: 100vh;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+h2 {
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+textarea {
+  width: 100%;
+  max-width: 480px;
+  height: 200px;
+  background-color: var(--textarea-bg);
+  border: 2px solid var(--textarea-border);
+  border-radius: 12px;
+  color: var(--text-color);
+  padding: 1rem;
+  font-size: 1.1rem;
+  resize: none;
+  box-shadow: 0 0 8px 3px transparent;
+  transition: box-shadow 0.5s ease, background-color 0.3s ease, color 0.3s ease;
+  margin-bottom: 1rem;
+}
+
+textarea.has-text {
+  box-shadow: 0 0 12px 3px var(--button-bg);
+}
+
+.buttons-container {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 480px;
+  width: 100%;
+}
+
+button {
+  background-color: var(--button-bg);
+  color: var(--button-text);
+  font-weight: 600;
+  padding: 0.6rem 1.4rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(175, 38, 238, 0.4);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  flex: 1 1 auto;
+  min-width: 120px;
+}
+
+button:hover {
+  background-color: var(--button-bg-hover);
+  transform: scale(1.05);
+  box-shadow: 0 6px 16px rgba(218, 69, 238, 0.5);
+}
+
+.theme-toggle-container {
+  width: 100%;
+  max-width: 480px;
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 1.5rem;
+}
+
+@media (max-width: 480px) {
+  .App {
+    padding: 1rem;
+  }
+  textarea {
+    height: 150px;
+  }
+  .buttons-container {
+    flex-direction: column;
+  }
+  button {
+    width: 100%;
+    min-width: auto;
+  }
+  .theme-toggle-container {
+    justify-content: center;
+    margin-bottom: 1rem;
+  }
 }

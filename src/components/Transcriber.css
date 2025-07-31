@@ -1,0 +1,61 @@
+.transcriber {
+  text-align: center;
+  width: 100%;
+  max-width: 700px;
+}
+
+textarea {
+  width: 345px;
+  max-width: 600px;
+  height: 300px;
+  font-size: 1rem;
+  padding: 1rem;
+  border-radius: 10px;
+  background-color: transparent;
+  color: var(--text-color);
+  box-shadow: 0 0 15px var(--box-shadow-color);
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+textarea.has-text {
+  animation: glow 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    box-shadow: 0 0 5px var(--box-shadow-color);
+  }
+  to {
+    box-shadow: 0 0 15px var(--box-shadow-color);
+  }
+}
+
+.buttons-container {
+  margin-top: 1rem;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+button {
+  padding: 0.8rem 1.2rem;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background-color: #9b6bde;
+}
+
+.success-message {
+  margin-top: 1rem;
+  color: var(--accent-color);
+  font-weight: bold;
+  text-align: center;
+}
